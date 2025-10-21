@@ -1,19 +1,12 @@
+/* Footer Wrapper */
 .footer-wrapper {
   position: relative;
-  background: linear-gradient(180deg, rgba(5, 5, 10, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(5,5,10,0.95) 0%, rgba(0,0,0,0.98) 100%);
+  padding: 5rem 2rem 2rem;
   overflow: hidden;
-  padding: 4rem 0 2rem;
-  transform: translateY(80px);
-  opacity: 0;
-  transition: all 1.4s ease;
 }
 
-.footer-wrapper.visible {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Animated gradient orbs background */
+/* Gradient Animated Orbs */
 .footer-overlay {
   position: absolute;
   top: -50%;
@@ -21,26 +14,32 @@
   width: 200%;
   height: 200%;
   background:
-    radial-gradient(circle at 20% 40%, rgba(0, 223, 216, 0.08), transparent 60%),
-    radial-gradient(circle at 80% 60%, rgba(121, 40, 202, 0.08), transparent 60%);
-  animation: drift 12s linear infinite alternate;
+    radial-gradient(circle at 25% 30%, rgba(0,223,216,0.08), transparent 60%),
+    radial-gradient(circle at 75% 70%, rgba(121,40,202,0.08), transparent 60%);
+  -webkit-animation: drift 15s ease-in-out infinite alternate;
+          animation: drift 15s ease-in-out infinite alternate;
   z-index: 0;
 }
 
-@keyframes drift {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    transform: translate(10px, -10px) scale(1.05);
-  }
+@-webkit-keyframes drift {
+  0% { -webkit-transform: translate(0,0) scale(1); transform: translate(0,0) scale(1); }
+  50% { -webkit-transform: translate(15px,-10px) scale(1.05); transform: translate(15px,-10px) scale(1.05); }
+  100% { -webkit-transform: translate(-10px,10px) scale(1); transform: translate(-10px,10px) scale(1); }
 }
 
+@keyframes drift {
+  0% { -webkit-transform: translate(0,0) scale(1); transform: translate(0,0) scale(1); }
+  50% { -webkit-transform: translate(15px,-10px) scale(1.05); transform: translate(15px,-10px) scale(1.05); }
+  100% { -webkit-transform: translate(-10px,10px) scale(1); transform: translate(-10px,10px) scale(1); }
+}
+
+/* Footer Container */
 .footer-container {
   position: relative;
   z-index: 2;
 }
 
+/* Footer Grid Layout */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -48,10 +47,10 @@
   margin-bottom: 2rem;
 }
 
-/* Brand title gradient */
+/* Brand Text Gradient Fix */
 .brand-text {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.9rem;
+  font-weight: 800;
   background: linear-gradient(90deg, #00dfd8, #7928ca);
   background-clip: text;
   -webkit-background-clip: text;
@@ -59,95 +58,89 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Footer Description */
 .footer-desc {
-  color: #999;
+  color: #bbb;
   margin: 1rem 0 1.5rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
-.text-cyan {
-  color: #00dfd8;
-}
-
-/* Social icons */
+/* Socials with staggered fade-in animation */
 .socials .social {
-  color: #aaa;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-right: 1rem;
-  transition: all 0.3s ease;
+  color: #aaa;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  -webkit-animation: socialFade 0.5s forwards;
+          animation: socialFade 0.5s forwards;
+  animation-delay: var(--delay);
+}
+
+@-webkit-keyframes socialFade {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes socialFade {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 .socials .social:hover {
   color: #00dfd8;
+  text-shadow: 0 0 8px rgba(0,223,216,0.6);
   transform: translateY(-3px) scale(1.2);
-  text-shadow: 0 0 8px rgba(0, 223, 216, 0.7);
+  transition: 0.3s ease;
 }
 
-/* Link headings */
+/* Links Gradient Fix */
 .footer-links h5 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   background: linear-gradient(90deg, #00dfd8, #7928ca);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
-/* Link lists */
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 0.5rem;
-}
-
+/* Links */
 .footer-links a {
-  color: #999;
+  color: #bbb;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
   color: #00dfd8;
-  text-shadow: 0 0 6px rgba(0, 223, 216, 0.7);
+  text-shadow: 0 0 6px rgba(0,223,216,0.6);
 }
 
+/* Footer Line */
 .footer-line {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255,255,255,0.1);
   margin: 2rem 0;
 }
-
-/* Bottom section */
-.footer-bottom {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.badge {
-  border-radius: 20px;
+/* Bottom badges */
+.footer-badges .badge {
   font-size: 0.75rem;
-  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  padding: 0.4rem 0.9rem;
   margin-left: 0.5rem;
-  box-shadow: 0 0 8px rgba(0, 223, 216, 0.4);
+  box-shadow: 0 0 10px rgba(0,223,216,0.3);
+  background: linear-gradient(90deg, #00dfd8, #7928ca);
 }
 
-.bg-cyan {
-  background: linear-gradient(90deg, #00dfd8, #007cf0);
-}
-
-.bg-purple {
-  background: linear-gradient(90deg, #7928ca, #ff0080);
-}
-
-/* Reveal animation */
+/* Reveal Animations */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -157,4 +150,7 @@
 .footer-wrapper.visible .reveal {
   opacity: 1;
   transform: translateY(0);
+}
+.text-white {
+  color: #ffffff77 !important;
 }

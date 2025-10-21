@@ -14,36 +14,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private videoElement!: HTMLVideoElement;
 
   features = [
-    {
-      title: 'Adaptive Learning',
-      text: 'AI-driven personalization molds lessons around each learner’s rhythm.',
-      icon: 'brain',
-      color: '#00d4ff'
-    },
-    {
-      title: 'Parental Insights',
-      text: 'Smart dashboards turn progress data into visuals parents can instantly understand.',
-      icon: 'chart-line',
-      color: '#a259ff'
-    },
-    {
-      title: 'Professional Guidance',
-      text: 'Behavioral analytics help psychiatrists identify trends and refine learning paths.',
-      icon: 'user-doctor',
-      color: '#0077ff'
-    },
-    {
-      title: 'Community Impact',
-      text: 'Connecting families, educators, and professionals to create collective progress.',
-      icon: 'people-group',
-      color: '#ff5abf'
-    },
-    {
-      title: 'Immersive Experience',
-      text: 'Smooth transitions, subtle motions, and futuristic visuals enhance engagement.',
-      icon: 'vr-cardboard',
-      color: '#3cff9f'
-    }
+    { title: 'Adaptive Learning', text: 'AI-driven personalization molds lessons around each learner’s rhythm.', icon: 'brain', color: '#00d4ff' },
+    { title: 'Parental Insights', text: 'Smart dashboards turn progress data into visuals parents can instantly understand.', icon: 'chart-line', color: '#a259ff' },
+    { title: 'Professional Guidance', text: 'Behavioral analytics help psychiatrists identify trends and refine learning paths.', icon: 'user-doctor', color: '#0077ff' },
+    { title: 'Community Impact', text: 'Connecting families, educators, and professionals to create collective progress.', icon: 'people-group', color: '#ff5abf' },
+    { title: 'Immersive Experience', text: 'Smooth transitions, subtle motions, and futuristic visuals enhance engagement.', icon: 'vr-cardboard', color: '#3cff9f' }
+  ];
+
+  // Simplified static stats
+  stats = [
+    { value: '100+', label: 'Psychiatrists' },
+    { value: '50+', label: 'Schools Engaged' }
   ];
 
   constructor(private faLibrary: FaIconLibrary) {
