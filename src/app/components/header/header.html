@@ -1,0 +1,22 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+
+  <!-- Top Navigation -->
+  <nav class="nav-container">
+    <div class="logo" (click)="navigateTo('/')">
+      <span class="brand">Mind<span>Bridge</span></span>
+    </div>
+
+    <ul class="nav-links">
+      <li *ngFor="let link of navLinks">
+        <a [routerLink]="link.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <i [class]="link.icon"></i> {{ link.label }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" [style.width.%]="scrollProgress"></div>
+</header>
