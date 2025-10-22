@@ -1,0 +1,180 @@
+/* ================= HERO VIDEO ================= */
+.professional-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 40% 50%, #0b0c10 0%, #050509 100%);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.25) contrast(1.1) saturate(0.8);
+  transform: scale(1.02);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 1rem 2rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.8rem;
+  background: linear-gradient(45deg, #00dfd8, #7928ca);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  color: #bbb;
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #00dfd8, #7928ca);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(127, 90, 240, 0.4);
+}
+/* ================= PROFESSIONAL TOOLKIT ================= */
+.professional-toolkit {
+  padding: 6rem 5% 2rem;
+  overflow-x: auto;
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(circle at 40% 60%, #07080b 0%, #0b0d10 100%);
+  border-radius: 20px;
+}
+
+.toolkit-scroller {
+  display: flex;
+  gap: 2rem;
+}
+
+.tool-card {
+  min-width: 280px;
+  padding: 2rem;
+  background: radial-gradient(circle at 40% 60%, #0b0d10 0%, #121418 100%);
+  border: 1px solid rgba(121, 40, 202, 0.2);
+  border-radius: 20px;
+  color: #eee;
+  flex-shrink: 0;
+  text-align: center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.4s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 30px rgba(121, 40, 202, 0.4);
+  border: 1px solid rgba(0, 223, 216, 0.4);
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: currentColor;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.tool-card:hover .tool-icon {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.tool-card h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  color: #00dfd8; /* blend with gradient theme */
+  margin-top: 0.5rem;
+}
+
+.tool-card p {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Icon color variants for hover glow */
+.bg-cyan { color: #00dfd8; }
+.bg-purple { color: #7928ca; }
+.bg-blue { color: #50a0ff; }
+.bg-pink { color: #ff5a96; }
+
+
+
+.cta-section {
+  padding: 6rem 5%;
+  text-align: center;
+  background: radial-gradient(circle at 40% 60%, #07080b 0%, #0b0d10 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,223,216,0.04), rgba(121,40,202,0.04));
+  z-index: 0;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #eee;
+}
+
+.cta-title {
+  font-size: 2.7rem;
+  background: linear-gradient(90deg, #00dfd8, #7928ca);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: 'Playfair Display', serif;
+}
+
+.cta-desc {
+  color: #aaa;
+  font-size: 1.15rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.btn-live {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-live:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255,65,108,0.45);
+}

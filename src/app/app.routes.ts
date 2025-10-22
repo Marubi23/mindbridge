@@ -15,7 +15,7 @@ export const routes: Routes = [
   },
   { 
     path: 'psychiatrist', 
-    loadComponent: () => import('./components/psychiatrist-portal/psychiatrist-portal').then(c => c.PsychiatristPortal) 
+    loadComponent: () => import('./components/professional-landing/professional-landing').then(c => c.ProfessionalLandingComponent) 
   },
   { 
     path: 'login', 
