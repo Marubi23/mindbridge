@@ -11,7 +11,7 @@ export const routes: Routes = [
   },
   { 
     path: 'parent', 
-    loadComponent: () => import('./components/parent-portal/parent-portal').then(c => c.ParentPortal) 
+    loadComponent: () => import('./components/parent-landing/parent-landing').then(c => c.ParentLandingComponent) 
   },
   { 
     path: 'psychiatrist', 

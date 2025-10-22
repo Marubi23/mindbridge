@@ -1,0 +1,46 @@
+<!-- HERO SECTION -->
+<section class="parent-hero">
+  <video autoplay muted loop playsinline>
+    <source src="/parent.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to Your MindBridge Parent Space</h1>
+    <p class="hero-subtitle">Monitor your child’s progress safely and effortlessly.</p>
+    <button class="btn-gradient" (click)="goToRegister()">Create Parent Account</button>
+  </div>
+</section>
+
+<!-- PARENT TOOLKIT SECTION -->
+<section class="parent-toolkit">
+  <div *ngFor="let f of parentFeatures" class="tool-card">
+    <div class="tool-icon" [ngClass]="f.colorClass">
+      <fa-icon [icon]="f.icon"></fa-icon>
+    </div>
+    <h4>{{f.title}}</h4>
+    <p>{{f.desc}}</p>
+  </div>
+</section>
+
+<!-- CHILD LINK SECTION -->
+<section class="child-section">
+  <div class="child-card">
+    <h2>Manage Your Children</h2>
+    <p>Link your children’s accounts easily and ensure they’re learning safely.</p>
+    <ul>
+      <li>Link existing child account</li>
+      <li>Create a new child profile</li>
+      <li>Track daily progress</li>
+    </ul>
+    <button class="btn-gradient" (click)="goToRegisterChild()">Add a Child</button>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="parent-cta">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2 class="cta-title">Your Child’s Growth, Secured</h2>
+    <p class="cta-desc">Start your MindBridge parent journey today and ensure a safe learning environment.</p>
+    <button class="btn-live" (click)="goToRegister()">Join Now</button>
+  </div>
+</section>

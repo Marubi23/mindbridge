@@ -1,0 +1,298 @@
+/* =========================== HERO SECTION ============================ */
+.parent-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 40% 50%, #0b0c10 0%, #050509 100%);
+  color: #fff;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.parent-hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.25) contrast(1.1) saturate(0.8);
+  transform: scale(1.02);
+  backface-visibility: hidden;
+}
+
+.parent-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 1rem 2rem;
+}
+
+.parent-hero .hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  background: linear-gradient(45deg, #00dfd8, #7928ca);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.parent-hero .hero-subtitle {
+  color: #bbb;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(135deg, #00dfd8, #7928ca);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 35px rgba(121, 40, 202, 0.4);
+}
+
+/* =========================== PARENT TOOLKIT ============================ */
+.parent-toolkit {
+  padding: 6rem 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  background: radial-gradient(circle at 40% 60%, #07080b 0%, #0b0d10 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.parent-toolkit .tool-card {
+  position: relative;
+  background: transparent; /* blends with gradient */
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+
+.parent-toolkit .tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(0, 223, 216, 0.04), rgba(121, 40, 202, 0.04));
+  opacity: 0.08;
+  border-radius: inherit;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.parent-toolkit .tool-card:hover::before {
+  opacity: 0.15;
+  filter: blur(6px);
+}
+
+.parent-toolkit .tool-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 0 35px rgba(127, 90, 240, 0.4);
+}
+
+.parent-toolkit .tool-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+  color: white;
+  transition: transform 0.4s ease;
+}
+
+.parent-toolkit .tool-card:hover .tool-icon {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.parent-toolkit h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  z-index: 1;
+  color: #fff;
+}
+
+.parent-toolkit p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  color: #aaa;
+  z-index: 1;
+}
+
+/* Icon color variants */
+.bg-cyan { color: #00d4ff; }
+.bg-purple { color: #7f5af0; }
+.bg-blue { color: #50a0ff; }
+.bg-pink { color: #ff5a96; }
+.bg-green { color: #00ffb4; }
+
+/* =========================== CHILD LINKING ============================ */
+.child-section {
+  padding: 6rem 5%;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at 40% 60%, #07080b 0%, #0b0d10 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.child-card {
+  position: relative;
+  max-width: 720px;
+  background: transparent; /* transparent to blend with gradient */
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.child-card h2 {
+  color: #00dfd8;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+}
+
+.child-card p {
+  color: #ccc;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.child-card ul {
+  margin-top: 1.5rem;
+  text-align: left;
+  padding-left: 1.2rem;
+  list-style-type: none;
+}
+
+.child-card ul li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.8rem;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.child-card ul li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #00dfd8;
+}
+
+/* =========================== CTA SECTION ============================== */
+.parent-cta {
+  padding: 7rem 5%;
+  text-align: center;
+  background: radial-gradient(circle at 40% 60%, #07080b 0%, #0b0d10 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.parent-cta .cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 223, 216, 0.04), rgba(121, 40, 202, 0.04));
+  z-index: 0;
+}
+
+.parent-cta .cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #eee;
+  font-family: 'Inter', sans-serif;
+}
+
+.parent-cta .cta-title {
+  font-size: 2.7rem;
+  background: linear-gradient(90deg, #00dfd8, #7928ca);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Playfair Display', serif;
+}
+
+.parent-cta .cta-desc {
+  color: #aaa;
+  font-size: 1.15rem;
+  margin: 1.2rem 0 2rem;
+}
+
+/* Button inside CTA */
+.btn-live {
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-live:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 65, 108, 0.45);
+}
+
+/* =========================== FORMS (REGISTER COMPONENTS) ============ */
+.welcome-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.welcome-card input {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.welcome-card input::placeholder {
+  color: #aaa;
+}
+
+.welcome-card button {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* =========================== ICON COLORS =============================== */
+.bg-cyan { color: #00d4ff; }
+.bg-purple { color: #7f5af0; }
+.bg-blue { color: #50a0ff; }
+.bg-pink { color: #ff5a96; }
+.bg-green { color: #00ffb4; }
