@@ -1,0 +1,190 @@
+/* ================= HERO VIDEO ================= */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.25) contrast(1.1) saturate(0.8);
+  transform: scale(1.02);
+  backface-visibility: hidden;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  background: linear-gradient(45deg, #00dfd8, #7928ca);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  color: #bbb;
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(135deg, #00dfd8, #7928ca);
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.4s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(127, 90, 240, 0.4);
+}
+
+/* ================= TOOLKIT SECTION ================= */
+.toolkit-container {
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+  padding: 6rem 5% 2rem 5%; /* remove extra margin on top */
+  position: relative;
+  z-index: 1;
+  background: transparent; /* so video shows behind */
+}
+
+.toolkit-scroller {
+  display: flex;
+  gap: 2rem;
+  animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Cards always visible */
+.tool-card {
+  min-width: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  color: #fff;
+  padding: 2rem;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 30px rgba(127,90,240,0.4);
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: currentColor;
+}
+
+/* ================= WELCOME SECTION ================= */
+.welcome-section {
+  padding: 5rem 5%;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(circle at 40% 60%, #07080b 0%, #0b0d10 100%);
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2rem; /* spacing from Toolkit */
+}
+
+.welcome-card {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+.welcome-card h2 {
+  color: #00dfd8;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-card p {
+  color: #ccc;
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.welcome-card ul {
+  margin-top: 1rem;
+  text-align: left;
+  padding-left: 1.2rem;
+  list-style-type: none;
+}
+
+.welcome-card ul li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.welcome-card ul li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: #00dfd8;
+}
+
+/* ================= CTA SECTION ================= */
+.cta-section {
+  padding: 6rem 5%;
+  text-align: center;
+  background: radial-gradient(circle at 40% 60%, #07080b 0%, #0b0d10 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 223, 216, 0.04), rgba(121, 40, 202, 0.04));
+  z-index: 0;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #eee;
+}

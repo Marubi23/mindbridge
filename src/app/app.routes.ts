@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   { 
     path: 'student', 
-    loadComponent: () => import('./components/student-portal/student-portal').then(c => c.StudentPortal) 
+    loadComponent: () => import('./components/student-landing/student-landing').then(c => c.StudentLandingComponent) 
   },
   { 
     path: 'parent', 

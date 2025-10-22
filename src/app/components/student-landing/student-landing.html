@@ -1,0 +1,58 @@
+<!-- HERO SECTION -->
+<section class="hero-section animated-bg">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="/support.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to Your MindBridge Space</h1>
+    <p class="hero-subtitle">
+      Tools designed to help you focus, learn, and track your growth.
+    </p>
+    <button class="btn-gradient" (click)="goToRegister()">Start Your Journey</button>
+  </div>
+</section>
+
+<div class="toolkit-container">
+  <div class="toolkit-scroller">
+    <div class="tool-card" *ngFor="let f of features" [style.borderColor]="f.color">
+      <div class="tool-icon"><fa-icon [icon]="f.icon"></fa-icon></div>
+      <h3>{{f.title}}</h3>
+      <p>{{f.desc}}</p>
+    </div>
+    <!-- Duplicate for seamless looping -->
+    <div class="tool-card" *ngFor="let f of features" [style.borderColor]="f.color">
+      <div class="tool-icon"><fa-icon [icon]="f.icon"></fa-icon></div>
+      <h3>{{f.title}}</h3>
+      <p>{{f.desc}}</p>
+    </div>
+  </div>
+</div>
+
+<!-- WELCOME SECTION -->
+<section class="welcome-section">
+  <div class="welcome-card">
+    <h2>Hello, Student!</h2>
+    <p>MindBridge is here to help you learn better, track progress, and grow with confidence.</p>
+    <ul>
+      <li>Daily Mood Tracking</li>
+      <li>Progress Journal</li>
+      <li>Interactive Lessons</li>
+      <li>Live Teacher Sessions</li>
+    </ul>
+    <button class="btn-gradient" (click)="goToRegister()">Let’s Begin!</button>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2 class="cta-title">We’ve Got You Covered</h2>
+    <p class="cta-desc">
+      Start your MindBridge journey today and explore tools tailored for your learning experience.
+    </p>
+    <button class="btn-gradient" (click)="goToRegister()">Join Now</button>
+  </div>
+</section>
