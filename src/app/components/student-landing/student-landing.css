@@ -9,7 +9,6 @@
   z-index: 0;
   pointer-events: none;
   filter: brightness(0.25) contrast(1.1) saturate(0.8);
-  transform: scale(1.02);
   backface-visibility: hidden;
 }
 
