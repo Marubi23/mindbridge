@@ -19,11 +19,11 @@ export const routes: Routes = [
   },
   { 
     path: 'login', 
-    loadComponent: () => import('./components/login/login').then(c => c.Login) 
+    loadComponent: () => import('./components/login/login').then(c => c.LoginComponent) 
   },
   { 
     path: 'register', 
-    loadComponent: () => import('./components/register/register').then(c => c.Register) 
+    loadComponent: () => import('./components/register/register').then(c => c.RegisterComponent) 
   },
   { path: '**', redirectTo: '' }
 ];

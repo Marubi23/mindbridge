@@ -1,0 +1,190 @@
+/* ========================
+   LOGIN PAGE LAYOUT
+======================== */
+.login-section {
+  display: flex;
+  height: 100vh;
+  font-family: 'JetBrains Mono', monospace;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+/* LEFT PANEL - VIDEO BACKGROUND */
+.login-left {
+  flex: 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%) saturate(120%) contrast(110%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 20, 0.5);
+  backdrop-filter: blur(6px);
+}
+
+.login-text {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  color: #fff;
+  z-index: 2;
+}
+
+.login-text h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00eaff;
+  margin: 0 0 0.5rem 0;
+}
+
+.login-text p {
+  font-size: 1rem;
+  color: #ccc;
+  letter-spacing: 0.5px;
+}
+
+/* RIGHT PANEL - LOGIN FORM */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(15px);
+  border-left: 1px solid rgba(0, 234, 255, 0.2);
+  box-shadow: -4px 0 20px rgba(0, 234, 255, 0.1);
+}
+
+/* Animated neon overlay */
+.login-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, #00eaff33 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, #b5179e33 0%, transparent 60%),
+              radial-gradient(circle at 50% 100%, #7209b733 0%, transparent 70%);
+  background-size: 200% 200%;
+  animation: move-bg 10s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes move-bg {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* LOGIN CARD */
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 85%;
+  max-width: 340px;
+  text-align: center;
+  color: #eee;
+}
+
+.login-card h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+/* FORM STYLES */
+.form-group {
+  position: relative;
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.3rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  color: #eee;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #00eaff;
+  box-shadow: 0 0 5px #00eaff55;
+}
+
+/* LOGIN BUTTON */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(90deg, #00eaff, #b5179e);
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #00eaff88, 0 0 25px #b5179e55;
+}
+
+/* SIGNUP LINK */
+.signup-link {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.signup-link a {
+  color: #00eaff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.signup-link a:hover {
+  color: #b5179e;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .login-section {
+    flex-direction: column;
+  }
+
+  .login-left {
+    flex: none;
+    height: 45vh;
+  }
+
+  .login-right {
+    flex: none;
+    height: 55vh;
+  }
+
+  .login-text {
+    bottom: 10%;
+    left: 8%;
+  }
+}

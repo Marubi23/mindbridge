@@ -77,7 +77,12 @@
   -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
 }
-
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; 
+  margin-top: 2rem;
+}
 .btn-outline::before {
   content: '';
   position: absolute;

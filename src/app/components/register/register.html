@@ -1,1 +1,38 @@
-<p>register works!</p>
+<div class="register-container">
+
+  <!-- LEFT SIDE - BACKGROUND VIDEO -->
+  <div class="video-section">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="/register.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- RIGHT SIDE - SIGNUP FORM -->
+  <div class="form-section">
+    <div class="form-box">
+      <h1 class="logo-text">MindBridge</h1>
+      <p class="sub-text">Empowering Special Minds</p>
+
+      <div class="floating-input">
+        <input type="text" id="name" required [(ngModel)]="user.name" />
+        <label for="name">Full Name</label>
+      </div>
+
+      <div class="floating-input">
+        <input type="email" id="email" required [(ngModel)]="user.email" />
+        <label for="email">Email</label>
+      </div>
+
+      <div class="floating-input">
+        <input type="password" id="password" required [(ngModel)]="user.password" />
+        <label for="password">Password</label>
+      </div>
+
+      <button class="btn-glow" (click)="register()">Join Now</button>
+
+      <p class="alt-text">
+        Already a member? <a routerLink="/login">Log in</a>
+      </p>
+    </div>
+  </div>
+</div>
