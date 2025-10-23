@@ -24,8 +24,8 @@
       Bridging education and mental well-being with intelligent, inclusive technology.
     </p>
     <div class="hero-buttons">
-      <button class="btn-gradient">Explore Resources</button>
-      <button class="btn-outline">Join a Live Session</button>
+      <button class="btn-gradient"(click)="goToRegister()" >Explore Resources</button>
+      <button class="btn-outline" (click)="goToRegister()">Join a Live Session</button>
     </div>
   </div>
 <div class="hero-stats">
@@ -84,6 +84,7 @@
   <div class="cta-content">
     <h2 class="cta-title">Join The Revolution of <span>Inclusive Education</span></h2>
     <p class="cta-desc">Empower every learner. Engage every parent. Equip every professional. Together, we create brighter futures.</p>
-    <button class="btn-gradient pulse">Get Started</button>
+    <button class="btn-gradient pulse" (click)="goToRegister()" >Get Started</button>
   </div>
 </section>
+<app-accessibility></app-accessibility>

@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faBrain, faChartLine, faUserDoctor, faPeopleGroup, faVrCardboard } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,8 +22,17 @@ export class StudentLandingComponent implements OnInit, AfterViewInit {
     { title: 'Immersive Tools', desc: 'Engaging experiences to make learning fun.', icon: 'vr-cardboard', color: '#3cff9f' }
   ];
 
-  constructor(private faLibrary: FaIconLibrary) {
-    this.faLibrary.addIcons(faBrain, faChartLine, faUserDoctor, faPeopleGroup, faVrCardboard);
+  constructor(
+    private faLibrary: FaIconLibrary,
+    private router: Router
+  ) {
+    this.faLibrary.addIcons(
+      faBrain,
+      faChartLine,
+      faUserDoctor,
+      faPeopleGroup,
+      faVrCardboard
+    );
   }
 
   ngOnInit() {}
@@ -60,8 +70,8 @@ export class StudentLandingComponent implements OnInit, AfterViewInit {
     this.videoElement.style.transform = `translateY(${offset}px) scale(1.05)`;
   }
 
+  /* ============ ROUTE NAVIGATION ============ */
   goToRegister() {
-    // Navigate to register page
-    window.location.href = '/register';
+    this.router.navigate(['/register']);
   }
 }

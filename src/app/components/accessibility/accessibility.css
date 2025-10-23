@@ -1,0 +1,205 @@
+/* ===============================
+   FLOATING ACCESSIBILITY BUTTON
+================================*/
+.accessibility-btn {
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem 1.1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 25px rgba(0, 234, 255, 0.25);
+  cursor: pointer;
+  z-index: 99999;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px) saturate(160%);
+  animation: floatPulse 3s ease-in-out infinite;
+}
+
+.accessibility-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(0, 234, 255, 0.45);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ===============================
+   GLASS PANEL CONTAINER
+================================*/
+.accessibility-panel {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  width: 310px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.3rem;
+  backdrop-filter: blur(25px) saturate(180%);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+  padding: 1.2rem 1.4rem;
+  transform: translateY(-15px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 99998;
+}
+
+.accessibility-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===============================
+   PANEL HEADER
+================================*/
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00eaff;
+  margin-bottom: 1.2rem;
+}
+
+.panel-header h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #ddd;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #00eaff;
+  transform: rotate(90deg);
+}
+
+/* ===============================
+   OPTION BLOCKS
+================================*/
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem;
+  margin-bottom: 0.8rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s ease;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.icon {
+  color: #00eaff;
+  font-size: 1.3rem;
+}
+
+.text h4 {
+  color: #fff;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ===============================
+   SWITCH
+================================*/
+.switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.switch.active {
+  background: linear-gradient(135deg, #00eaff, #b5179e);
+}
+
+.switch.active::before {
+  transform: translateX(20px);
+}
+
+/* ===============================
+   FONT CONTROLS
+================================*/
+.font-controls {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+.font-controls button {
+  background: rgba(0, 234, 255, 0.08);
+  border: 1px solid rgba(0, 234, 255, 0.25);
+  color: #00eaff;
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.font-controls button:hover {
+  background: rgba(0, 234, 255, 0.3);
+  color: #fff;
+}
+
+/* ===============================
+   RANGE SLIDER
+================================*/
+input[type="range"] {
+  width: 100%;
+  accent-color: #b5179e;
+  cursor: pointer;
+  margin-top: 0.7rem;
+  opacity: 0.9;
+}
+
+/* ===============================
+   RESPONSIVE
+================================*/
+@media (max-width: 600px) {
+  .accessibility-panel {
+    width: 92%;
+    right: 4%;
+    top: 3.5rem;
+  }
+  .accessibility-btn {
+    top: 1.4rem;
+    right: 1.2rem;
+  }
+}

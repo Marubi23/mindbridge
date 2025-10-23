@@ -1,0 +1,40 @@
+
+<button class="accessibility-btn" (click)="togglePanel()">
+  <fa-icon [icon]="['fas','cog']"></fa-icon>
+</button>
+
+<div class="accessibility-panel" [class.open]="panelOpen">
+  <div class="panel-header">
+    <h3><fa-icon [icon]="['fas','cog']"></fa-icon> Accessibility</h3>
+    <button class="close-btn" (click)="togglePanel()">
+      <fa-icon [icon]="['fas','xmark']"></fa-icon>
+    </button>
+  </div>
+
+  <div class="option">
+    <div class="icon"><fa-icon [icon]="['fas','moon']"></fa-icon></div>
+    <div class="text">
+      <h4>Dark Mode</h4>
+    </div>
+    <div class="switch" [class.active]="darkMode" (click)="darkMode = !darkMode; applyDarkMode()"></div>
+  </div>
+
+  <div class="option">
+    <div class="icon"><fa-icon [icon]="['fas','font']"></fa-icon></div>
+    <div class="text">
+      <h4>Font Size</h4>
+      <div class="font-controls">
+        <button (click)="adjustFont('decrease')"><fa-icon [icon]="['fas','minus']"></fa-icon></button>
+        <button (click)="adjustFont('increase')"><fa-icon [icon]="['fas','plus']"></fa-icon></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="option">
+    <div class="icon"><fa-icon [icon]="['fas','sun']"></fa-icon></div>
+    <div class="text">
+      <h4>Brightness</h4>
+      <input type="range" min="0.5" max="1.5" step="0.05" [(ngModel)]="brightness" (input)="applyBrightness()" />
+    </div>
+  </div>
+</div>

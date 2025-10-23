@@ -44,7 +44,7 @@ export class ProfessionalLandingComponent {
   ];
 
   goToRegister() {
-    this.router.navigate(['/professional-register']);
+    this.router.navigate(['/register']);
   }
 
   goToDashboard() {
